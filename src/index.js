@@ -1,13 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { ChakraProvider } from "@chakra-ui/react";
+import { SearchContextProvider } from "./Context/SearchContext/SearchContext";
+import { MovieProvider } from "./Context/MovieContext/MovieContext";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <MovieProvider>
+      <SearchContextProvider>
+        <ChakraProvider>
+          <App />
+        </ChakraProvider>
+      </SearchContextProvider>
+    </MovieProvider>
   </React.StrictMode>
 );
 
