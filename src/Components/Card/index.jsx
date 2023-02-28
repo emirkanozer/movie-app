@@ -4,14 +4,18 @@ import React from "react";
 function MovieCard({ movie }) {
   return (
     <Box
-      height={"100%"}
       key={movie.id}
       maxW="sm"
       borderWidth="1px"
       borderRadius="lg"
       overflow="hidden"
+      m={2}
+      h="2xl"
     >
-      <Image src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} />
+      <Image
+        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+        title={movie.title}
+      />
 
       <Box p="6">
         <Heading size="md" fontWeight="semibold" mb="2">

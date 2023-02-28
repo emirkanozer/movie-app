@@ -6,17 +6,19 @@ import reportWebVitals from "./reportWebVitals";
 import { ChakraProvider } from "@chakra-ui/react";
 import { SearchContextProvider } from "./Context/SearchContext/SearchContext";
 import { MovieProvider } from "./Context/MovieContext/MovieContext";
-
+import { BrowserRouter } from "react-router-dom";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <MovieProvider>
-      <SearchContextProvider>
-        <ChakraProvider>
-          <App />
-        </ChakraProvider>
-      </SearchContextProvider>
-    </MovieProvider>
+    <BrowserRouter>
+      <MovieProvider>
+        <SearchContextProvider>
+          <ChakraProvider>
+            <App />
+          </ChakraProvider>
+        </SearchContextProvider>
+      </MovieProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
